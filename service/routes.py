@@ -177,26 +177,26 @@ def health_check():
 ######################################################################
 # GET INDEX
 ######################################################################
-@app.route("/")
-def root_metadata():
-    """
-    Returns service metadata for the Inventory Admin API.
+# @app.route("/")
+# def root_metadata():
+#     """
+#     Returns service metadata for the Inventory Admin API.
 
-    This includes basic information like service name, version,
-    and a list of available API endpoints for discovery/documentation.
-    """
-    return jsonify(
-        {
-            "service": "inventory-service",
-            "version": "1.0",
-            "endpoints": [
-                "/inventory",
-                "/api/inventory",
-                "/api/inventory/{id}",
-                "/health",
-            ],
-        }
-    )
+#     This includes basic information like service name, version,
+#     and a list of available API endpoints for discovery/documentation.
+#     """
+#     return jsonify(
+#         {
+#             "service": "inventory-service",
+#             "version": "1.0",
+#             "endpoints": [
+#                 "/inventory",
+#                 "/api/inventory",
+#                 "/api/inventory/{id}",
+#                 "/health",
+#             ],
+#         }
+#     )
 
 
 ######################################################################
@@ -339,7 +339,7 @@ class InventoryResource(Resource):
 ######################################################################
 #  INVENTORY COLLECTION
 ######################################################################
-@api.route("/inventory")
+@api.route("/")
 class InventoryCollection(Resource):
     """
     InventoryCollection class
